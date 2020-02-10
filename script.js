@@ -1,22 +1,33 @@
-var numPoints = Math.round(Math.random()*10) + 5;
+var numStages = 5;
+var numPoints = Math.round(Math.random()*15) + 5;
 
+var line = document.getElementById('line');
+var start = genPoints(numPoints)
+var values = start
 
-var svg = document.getElementById('backgroundSVG');
+for(var i = 0; i <= numStages; i++){
+  values += genPoints(numPoints);
+}
 
-var polyline = document.getElementById('line');
+values += start;
 
-var x = 0;
-var y;
+line.setAttribute('values', values)
 
-var points = ""
+function genPoints(numPoints){
 
-for(var i = 0; i <= numPoints; i++){
+  var points = "1920,0 0,0 "
+  var x,y;
 
-  var point = svg.createSVGPoint();
+  for(var i = 0; i <= numPoints; i++){
 
-  point.y = Math.round(Math.random()*500) + 250;
-  point.x = i * 1920 / numPoints;
+    y = Math.round(Math.random()*300) + 250;
+    x = i * 1920 / numPoints;
 
-  polyline.points.appendItem(point);
+    points += `${x},${y} `
 
+  }
+
+  points += "; "
+
+  return points;
 }
