@@ -42,7 +42,6 @@ body {
 
 #splashscreen {
   width: 100vw;
-  /* display: flex; */
   vertical-align: center;
   align-items: center;
   justify-content: center;
@@ -96,9 +95,14 @@ connection {
 }
 
 #content {
-  height: 200vh;
-  width:100vw;
+  width:60vw;
+  margin: 0 12.5vw 5vh 12.5vw;
   position: relative;
+  background-color:white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px #ccc;
+  font-family: Open Sans;
+  padding: 1vh 7.5vw 5vh 7.5vw;
 
 }
 
@@ -134,8 +138,17 @@ connection {
   background-color:white;
 }
 
-table {
-  width: 80%;
+
+.flexy {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flexyChildren {
+  width: calc(100% / 3);
+  min-width: 300px;
 }
 
 h1 {
@@ -190,4 +203,44 @@ p {
   font-size: 18px;
   padding: 0 20% 0 20%;
   font-family: Open Sans;
+}
+
+body {
+  all: initial;
+  all: unset;
+  height: 200vh;
+}
+
+#background {
+  width: 100vw;
+  margin: 0;
+
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  position: absolute;
+  top: 0;
+  width:0;
+  
+  z-index: -100;
+}
+
+.indent {
+  padding-left: 20px
+}
+
+h2, h3 {
+  color: #345a80;
+}
+
+.wide {
+  width: 100%;
+}
+
+a {
+  color: #345a80;
+  font-weight: bold;
 }

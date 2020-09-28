@@ -1,51 +1,55 @@
-<div id = "scroll">
-  <div id = "scroll-info"> 2019-04-01 </div>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+
+<style>
+  body {
+    all: initial;
+    all: unset;
+    height: 200vh;
+  }
+
+  #background {
+    height: 200vh;
+    width: 100vw;
+    margin: 0;
+
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    position: absolute;
+    top: 0;
+    width:0;
+    
+    z-index: -100;
+  }
+
+</style>
+
+</head>
+<body>
+  <div id = "background">
 </div>
-<table>
-  <tr>
-    <td></td>
-    <td>
-      <div class="feature" id="one">
-        <h1>Extensive Datasets</h1>
-        <p>
-          We offer almost three years of minutely data, five years of daily data and fundamental data for over 10000 companies.
-          We expect to add sentimental data and other alternative datasets in the coming months.
-        </p>
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <div class="feature" id="two">
-        <h1>Powerful Backtesting</h1>
-        <p>
-          By developing an extensive c++ backend we were able to create fast and powerful backtesting software while maintaining the ease of coding in Python.
-          It is lightweight enough to run in our free online demo and serious users can download the app.
-        </p>
-      </div>
-    </td>
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td>
-      <div class="feature" id="three">
-        <h1>One-click Paper Trading</h1>
-        <p>
-          With a single click one can deploy one's backtested algorith onto the market.
-          We use realtime price updates from the IEX exchange to power our paper trading capabilities and allow you to test the real-world effectiveness of your algorithms
-        </p>
-      </div>
-    </td>
-  </tr>
-</table>
+</body>
+</html>
 
 <script>
-    $('#one, #two').connections();
-    $('#two, #three').connections();
-    window.onresize = function() {
-        $('.feature').connections('remove');
-        $('#one, #two').connections();
-        $('#two, #three').connections();
-    }
+var viewboxWidth = 10000;
+var viewboxHeight = $('#background').height();
+var lineSpacing = 100;
+
+var draw = SVG().addTo('#background').attr({'width': '100vw', 'height': viewboxHeight, 'viewbox':`0 0 ${viewboxWidth} ${viewboxHeight}`})
+
+for(var i = 0; i < viewboxHeight / lineSpacing; i ++){
+  
+  draw.text(String(3000 - i * lineSpacing)).move(20,i * lineSpacing - 25).font({ fill: '#ccc', family: 'Inconsolata', 'font-size': '17px' })
+  draw.line(0, i * lineSpacing, viewboxWidth, i * lineSpacing).stroke({ color: '#ccc', width: 1})
+}
+
 </script>
