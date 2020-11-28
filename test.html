@@ -1,55 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="main.css">
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+<!-- Learn about this code on MDN: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask -->
 
-<style>
-  body {
-    all: initial;
-    all: unset;
-    height: 200vh;
-  }
-
-  #background {
-    height: 200vh;
-    width: 100vw;
-    margin: 0;
-
-    -moz-user-select: -moz-none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    position: absolute;
-    top: 0;
-    width:0;
-    
-    z-index: -100;
-  }
-
-</style>
-
-</head>
-<body>
-  <div id = "background">
-</div>
-</body>
-</html>
-
-<script>
-var viewboxWidth = 10000;
-var viewboxHeight = $('#background').height();
-var lineSpacing = 100;
-
-var draw = SVG().addTo('#background').attr({'width': '100vw', 'height': viewboxHeight, 'viewbox':`0 0 ${viewboxWidth} ${viewboxHeight}`})
-
-for(var i = 0; i < viewboxHeight / lineSpacing; i ++){
-  
-  draw.text(String(3000 - i * lineSpacing)).move(20,i * lineSpacing - 25).font({ fill: '#ccc', family: 'Inconsolata', 'font-size': '17px' })
-  draw.line(0, i * lineSpacing, viewboxWidth, i * lineSpacing).stroke({ color: '#ccc', width: 1})
-}
-
-</script>
+<svg style="width:100vw;height:100vh;" viewbox="0 0 1920 900">
+  <mask id = "mask">
+    <rect width="1920" height="900" fill="#fff" />
+    <polygon fill = "#000" id="grph" points="1920 0 0 0 0 393 50.42117084755457 479 100.84234169510914 485 151.2635125426637 579 201.68468339021828 636 252.10585423777283 557 302.5270250853274 453 352.94819593288196 370 403.36936678043656 363 453.79053762799117 344 504.21170847554566 401 554.6328793231003 327 605.0540501706548 338 655.4752210182095 267 705.8963918657639 373 756.3175627133186 310 806.7387335608731 348 857.1599044084277 345 907.5810752559823 300 958.0022461035368 229 1008.4234169510913 283 1058.844587798646 185 1109.2657586462005 229 1159.686929493755 145 1210.1081003413096 89 1260.5292711888642 21 1310.950442036419 115 1361.3716128839733 206 1411.7927837315278 221 1462.2139545790826 118 1512.6351254266372 120 1563.0562962741917 74 1613.4774671217463 84 1663.8986379693008 142 1714.3198088168554 217 1764.74097966441 318 1815.1621505119647 210 1865.583321359519 193 1916.0044922070736 123 1966.4256630546283 113 1965.9996791280662 75"></polygon>
+</mask>
+            <use xlink:href="#grph"></use>
+            <text x="0%" y="50%" style="fill: green; font: italic 100px Libre Baskerville;" mask="url(#mask)">BRANDT WINKLER PRINS</text>
+</svg>

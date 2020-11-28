@@ -1,246 +1,176 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
-
 * {
-  /* color: black; */
-  /* font-family: Open Sans; */
-  /* overflow-x: hidden; */
+    font-family: Open Sans;
+}
 
+body {
+    all: initial;
+    all: unset;
+    background-image: linear-gradient(275deg, #5E35B1, #006064) !important;
+    position: relative;
 }
 
 ::-webkit-scrollbar {
-    width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+    display: none;
 }
 
-.center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+@media (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
 }
 
-.centerText {
-  font: italic 100px Libre Baskerville;
-  fill: black;
-  letter-spacing: 0px;
+@media (min-width: 480px) {
+    html {
+        font-size: 13px;
+    }
 }
 
-body {
-  all: initial;
-  all: unset;
-  background-color:white;
-  position: relative;
-
+@media (min-width: 768px) {
+    html {
+        font-size: 14px;
+    }
 }
 
-#backgroundSVG {
-  width: 100vw;
-  /* height: 90vh; */
-  margin: 0;
+@media (min-width: 992px) {
+    html {
+        font-size: 15px;
+    }
 }
 
-#splashscreen {
-  width: 100vw;
-  vertical-align: center;
-  align-items: center;
-  justify-content: center;
-
-}
-
-polyline {
-  /* fill: white; */
-}
-
-#features {
-  position: relative;
-  background-color: black;
-  width: 100vw;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-#features table {
-  width: 100%;
-}
-
-#features td {
-  text-align: center;
-}
-
-.feature {
-  display: inline-block;
-  background-color: white;
-  height: 500px;
-  width: 400px;
-  padding: 30px;
-  line-height: 30px;
-  border-radius: 20px;
-  position: relative;
-}
-
-table > h1 {
-  font-size: 20px;
-  padding-bottom: 30px;
-  line-height: 100px !important;
-}
-
-.feature p {
-  margin-top: 50px;
-}
-
-connection {
-  border: 10px solid #fff;
-  border-radius: 50px;
-}
-
-#content {
-  width:60vw;
-  margin: 0 12.5vw 5vh 12.5vw;
-  position: relative;
-  background-color:white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px 0px #ccc;
-  font-family: Open Sans;
-  padding: 1vh 7.5vw 5vh 7.5vw;
-
-}
-
-#scroll {
-  width:200px;
-  padding: 50px;
-  height: calc(200px * 1.618);
-  top: 0;
-  position: -webkit-sticky;
-  position: sticky;
-  display:flex;
-  justify-content: center;
-
-}
-
-#scroll-info{
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  color:black;
-  font-family: Libre Baskerville;
-  font-size: 40px;
-  background-color:white;
-  width:100px;
-  /* height: calc(100px * 2); */
-  border-radius: 5px;
-  line-height: 100px;
-  text-align: center;
-}
-
-#bottom {
-  width: 100vw;
-  height: 10vw;
-  background-color:white;
-}
-
-
-.flexy {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.flexyChildren {
-  width: calc(100% / 3);
-  min-width: 300px;
+@media (min-width: 1200px) {
+    html {
+        font-size: 16px;
+    }
 }
 
 h1 {
-  width: 100%;
-  text-align: center;
-  color: #345a80;
-  font-family: Libre Baskerville;
-  border-bottom: 2px solid #345a80;
-  line-height: 50px;
-  height: 25px;
+    text-align: center;
+    color: white;
+    font-family: Open Sans;
+    font-weight: 900;
+    line-height: 60px;
+    font-size: 2.5rem;
+    width: 100%;
 }
 
-.white-background {
-  background-color: white;
-  padding: 20px;
-}
-
-a {
-  color: unset;
-  text-decoration: unset;
-}
-
-a[ id= "aboutMe" ]:target ~ #aboutMeTarget {
-    -webkit-transform: translateY( -1000px);
-    transform: translateY( -1000px );
-}
-
-#socials {
-  /* display:block; */
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
-
-}
-
-#socials a {
-  display:inline-block;
-}
-
-#socials svg {
-  width: 50px;
-  padding: 25px;
-  fill: #345a80;
-}
-
-#socials svg:hover {
-  fill: black;
+h3 {
+    color: #345a80;
+    padding: 5px 0px;
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 900;
+    width: 100%;
+    text-align: center;
 }
 
 p {
-  font-size: 18px;
-  padding: 0 20% 0 20%;
-  font-family: Open Sans;
-}
-
-body {
-  all: initial;
-  all: unset;
-  height: 200vh;
-}
-
-#background {
-  width: 100vw;
-  margin: 0;
-
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-  position: absolute;
-  top: 0;
-  width:0;
-  
-  z-index: -100;
-}
-
-.indent {
-  padding-left: 20px
-}
-
-h2, h3 {
-  color: #345a80;
-}
-
-.wide {
-  width: 100%;
+    font-size: 1rem;
+    font-family: Open Sans;
+    max-width: 60vw;
 }
 
 a {
-  color: #345a80;
-  font-weight: bold;
+    color: unset;
+    text-decoration: unset;
+    color: #345a80;
+    font-weight: bold;
+}
+
+.centerText {
+    font: italic 100px Libre Baskerville;
+    letter-spacing: 0px;
+}
+
+#backgroundSVG {
+    margin: 0;
+}
+
+#splashscreen {
+    padding: 0;
+    margin: 0;
+    vertical-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+polyline {
+    fill: white;
+}
+
+#socials {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+#socials a {
+    display: inline-block;
+}
+
+#socials svg {
+    width: 50px;
+    padding: 25px;
+    fill: #fff;
+}
+
+#socials svg:hover {
+    fill: #000;
+}
+
+.content {
+    position: relative;
+    background-color: white;
+    padding: 50px 30px;
+    margin: 0 5% 50px 5%;
+    border-radius: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+}
+
+.skill {
+    width: 400px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    flex: 1 0 33%;
+    margin: 20px 100px;
+}
+
+.shadow {
+    box-shadow: 0 0 5px #aaa;
+}
+
+.experience {
+    /* width: 400px; */
+    /* height: 200px; */
+    background-color: white;
+    border-radius: 5px;
+    padding: 25px;
+}
+
+.experience img {
+    width: 100px;
+    margin: 25px 25px 25px 0px;
+}
+
+.experience div {
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+}
+
+.asciinema {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.asciinema-player {
+    border-radius: 5px;
 }

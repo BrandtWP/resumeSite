@@ -1,239 +1,256 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="stylesheet" type="text/css" href="main.css">
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+    <link rel="icon" type="image/png" href="resources/favicon.ico">
+
+    <title>Brandt WP</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="resources/asciinema-player.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
 
 </head>
+
 <body>
 
-<div id = "background"></div>
+    <!-- <div id = "background"></div> -->
 
-<div id = "splashscreen">
-  <svg id = "backgroundSVG" viewbox = "0 0 1920 900">
-    <clipPath id="myClip"></clipPath>
-    <text class = "centerText" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" style = "fill: #345a80">BRANDT WINKLER PRINS</text>
-    <g clip-path="url(#myClip)">
-      <rect width="100%" height="100%" fill = "#345a80"></rect>
-      <text class = "centerText" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" style = "fill: white">BRANDT WINKLER PRINS</text>
-    </g>
-  </svg>
-</div>
+    <div id="splashscreen">
+        <svg id="backgroundSVG" viewbox="0 0 1920 900">
+            <defs>
+                <polygon id="graph"></polygon>
+                <text id="name" class="centerText" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle">
+                    BRANDT WINKLER PRINS</text>
+            </defs>
+            <mask id="knockout-text">
+                <rect width="100%" height="100%" fill="#fff" x="0" y="0" />
+                <use xlink:href="#name" fill="#000"></use>
+            </mask>
+            <mask id="mask">
+                <rect width="1920" height="900" fill="#fff" />
+                <use xlink:href="#graph" fill="#000"></use>
+            </mask>
+            <use xlink:href="#graph" fill="#fff" mask="url(#knockout-text)"></use>
+            <use xlink:href="#name" fill="#fff" mask="url(#mask)"></use>
+        </svg>
+    </div>
 
-  <div id = "content">
 
-    <!-- <h1 id = "aboutMeTarget"><a id = "aboutMe"><span class = "white-background"> About Me </span></a></h1> -->
-  
     <div id="socials">
         <a href="https://github.com/BrandtWP" target="_blank">
-        <svg aria-labelledby="simpleicons-github-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title id="simpleicons-github-icon">GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+            <svg aria-labelledby="simpleicons-github-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title id="simpleicons-github-icon">GitHub icon</title>
+                <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+                </path>
+            </svg>
         </a>
         <a href="https://www.linkedin.com/in/brandt-winkler-prins-a4b998120" target="_blank">
-          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn icon</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>LinkedIn icon</title>
+                <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
         </a>
         <a href="mailto:bwinklerprins@gmail.com" target="_blank">
-          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail icon</title><path d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H21V7.387l-9 6.463-9-6.463V21H1.5C.649 21 0 20.35 0 19.5v-15c0-.425.162-.8.431-1.068C.7 3.16 1.076 3 1.5 3H2l10 7.25L22 3h.5c.425 0 .8.162 1.069.432.27.268.431.643.431 1.068z"/></svg>
+            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Gmail icon</title>
+                <path
+                    d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H21V7.387l-9 6.463-9-6.463V21H1.5C.649 21 0 20.35 0 19.5v-15c0-.425.162-.8.431-1.068C.7 3.16 1.076 3 1.5 3H2l10 7.25L22 3h.5c.425 0 .8.162 1.069.432.27.268.431.643.431 1.068z" />
+            </svg>
         </a>
     </div>
 
-<h2>Summary</h2> <br>
-
-I am a student at the University College London studying for a BSc in Economics and Statistics. I have a strong background in computer programming, specifically concerning data science.
-This derived from a passion for quantitative finance and alternative data. I have experience in both front-end and back-end development, networking and working in development teams. 
-<br>
-<br>
-
-
-<h2>Skills</h2>
-  <div class = "flexy">
-    <div class = "flexyChildren">
-      <h3>Coding Languages:</h3>
-          Python<br>
-          Node.Js<br>
-          HTML, CSS, Javascript<br>
-          Go<br>
-          C++<br>
-          OCaml<br>
+    <h1>About Me</h1>
+    <div class="content shadow">
+        <p>
+            I am a student at the University College London studying for a BSc in Economics and Statistics. I have a strong background in computer programming, specifically concerning data science. This derived from a passion for quantitative finance and alternative
+            data. I have experience in both front-end and back-end development, networking and working in development teams.
+        </p>
     </div>
-    <div class = "flexyChildren">
-    
-    <h3>Libraries:</h3>
-      Datascience: Pandas, Numpy<br> 
-      Machine Learning: Tensorflow, SciKit Learn, Keras<br>
-      Web Design: ExpressJS, Jquery<br>
-      AWS: EC2, Lex, Elastic Beanstalk, Lambda <br>
+    <h1>Skills</h1>
+    <div class="content" style="background-color: rgba(0,0,0,0); padding:0;">
+        <div class='skill shadow'>
+            <h3>Data Science</h3>
+            <p>I have been using <span class="highlight">Python</span> (with <span class="highlight">Numpy</span> and
+                <span class="highlight">Pandas</span>) to analyze financial datasets for almost five years now. This and has also lead me to acquire an extensive knowledge of <span class="highlight">SQL</span> (specifically for <span class="highlight">MySQL</span>                and <span class="highlight">MS SQL Server</span>), and I have forayed into the graph DB Gremlin. Furthermore, I am using
+                <span class="highlight">R</span> regularly as part of my degree program.
+            </p>
+        </div>
+        <div class='skill shadow'>
+            <h3>Machine Learning / AI</h3>
+            <p>I have been experimenting with Reinforcement learning, Natural Language Processing, and Neural Networks for several years now. I mainly use Keras, Tensorflow, NLTK, Scikit-Learn, and Stanford's CoreNLP. </p>
+        </div>
+        <div class='skill shadow'>
+            <h3>The Web</h3>
+            <p>HTML, CSS, and Javascript was &mdash; as is often the case &mdash; my first introduction to programming. I later expanded on this knowledge with learning how to develop web apps using node.js. This also lead me to learn how to use MongoDB
+                for storing user data</p>
+        </div>
+        <div class='skill shadow'>
+            <h3>Systems Languages</h3>
+            <p>I primarily use Go and C++ for high-speed systems programming. Recently, however, I have been investigating OCaml. It has taken me a while to wrap my head around functional programming but it now serves me as a viable replacement for Go.</p>
+        </div>
     </div>
-    <div class = "flexyChildren">
-    <h3>Databases:</h3>
-      MySQL<br>
-      Microsoft SQL Server<br>
-      SQLite<br>
-      MongoDB<br>
-      Gremlin<br>
-    </div>
-  </div>
-  <h2>Projects</h2>
-    <div class = "wide">
-      <script id="asciicast-saHjjaYDMSnOxyfCxPf5SKznP" src="https://asciinema.org/a/saHjjaYDMSnOxyfCxPf5SKznP.js" data-size= "small" data-rows="20" data-cols="00" data-preload="1" async></script>
+    <h1>Projects</h1>
+    <div class="content shadow">
+        <h3> <a href="https://github.com/quantitateTrading/dataCollection    ">
+                Data Collection
+            </a></h3>
+
+        <p>I have been compiling a collection of scripts for financial data collection that I run daily as a cronjob. Currently it collects daily data from <a href="https://stooq.com">Stooq</a> and it downloads all price updates from the <a href="https://iextrading.com">IEX exchange.</a>            Futhermore I have begun adding alternative data sources. It currently also scrapes the twitter feeds of all members of the U.S. Congress for mentions of companies and assesses their sentiment. I am currently working on something similar for
+            Reuters articles.
+        </p>
+        <h3><a href="https://github.com/quantitateTrading/trader">
+                Backtesting
+            </a></h3>
+        <div class="asciinema">
+            <asciinema-player src="resources/demo.cast"></asciinema-player>
+            <script src="resources/asciinema-player.js"></script>
+        </div>
+        <p>This is the output of the backtesting algorithm I wrote to test stock trading algorithms. It uses a C++ backend while the algorithms themselves are written in python. This ensures both fast code execution and easy development. Below are some example
+            graphs produced by the backtesting software. The one to the left traded PG&E (PCG) on the basis of the sentiment of tweets sent by members of California state government. The right graph used a neural net to trade Take Two Interactive (TTWO)
+            on the basis of reviews scraped from metacritic. It is a textbook example of overfitting, but it was an interesting project nevertheless.</p>
+        <div>
+            <img src="./resources/graph1.png">
+            <img src="./resources/graph2.png">
+        </div>
     </div>
 
-    This is the output of the backtesting algorithm I wrote to test stock trading algorithms. It uses a C++ backend while the algorithms themselves are written in python.
-    This ensures both fast code execution and easy development. The daily data is sourced from <a href = "https://stooq.com">Stooq</a> while the minutely data is sourced from
-    the <a href = "https://iextrading.com">IEX exchange.</a>
-    <br>
-    <br>
-    Below are some example graphs produced by the backtesting software. The one to the left traded PG&E (PCG) on the basis of the sentiment of tweets sent by members of California state government.
-    The right graph used a neural net to trade Take Two Interactive (TTWO) on the basis of reviews scraped from metacritic. It is a textbook example of overfitting, but it was an interesting project nevertheless.
-    <br>
-    <br>
-  <div class = "flexy">
-      <img src = "./resources/graph1.png">
-      <img src = "./resources/graph2.png">
-  </div>
+    <div id="" class="content" style="background-color: rgba(0,0,0,0); padding:0;">
+        <div>
+            <h1>Work Experience</h1>
 
-  <h2>Work Experience</h2>
-  <div class = 'indent'>
-    2018 Part-time QA Tester at 4me, Inc.<br> 
-    2019-2020 Part-time developer at 4me, Inc.<br>
-  </div>
-  <br>
-  <h2>Education</h2>
-  <div class = 'indent'>
-BSc in Economics and Statistics, degree anticipated May 2023<br>
-University College London, United Kingdom<br>
-<br>
-Graduated Redwood High School 2017-2020<br>
-GPA: 4.3<br>
-</div>
-
-</div>
+            <div class="experience shadow">
+                <div class='indent'>
+                    <img src="resources/4meLogo.svg"> 2018 Part-time QA Tester at 4me, Inc.<br> 2019-2020 Part-time developer at 4me, Inc.<br>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1>Education</h1>
+            <div class="experience shadow">
+                <div><img src="resources/uclLogo.png"> BSc in Economics and Statistics, degree anticipated May 2023<br> University College London, United Kingdom</div>
+                <div><img src="resources/redwoodLogo.gif"> Graduated Redwood High School 2017-2020<br> GPA: 4.3<br>
+                </div>
+            </div>
+        </div>
 </body>
+
 </html>
 
 <script>
+    // draw and animate graph
 
-// draw chart
+    const precision = 1;
 
-var viewboxWidth = 10000;
-var viewboxHeight = 3000;
-var lineSpacing = 150;
+    const speed = 1;
 
-var draw = SVG().addTo('#background').attr({'width': '100vw', 'height': viewboxHeight, 'viewbox':`0 0 ${viewboxWidth} ${viewboxHeight}`})
+    var viewBoxHeight = 900;
+    var viewBoxWidth = 1920;
 
-for(var i = 0; i < viewboxHeight / lineSpacing; i ++){
+    var numPoints = 30;
+    var maxPoints = 50;
 
-  var height = (i + 1) * lineSpacing
-  
-  draw.text(String(3000 - height)).move(20,height - 25).font({ fill: '#ccc', family: 'Inconsolata', 'font-size': '17px' })
-  draw.line(0, height, viewboxWidth, height).stroke({ color: '#ccc', width: 1})
+    var startPoints = `${viewBoxWidth} 0 0 0 `
+        // var startPoints = ""
 
-}
+    var polyline = SVG(document.getElementById('graph'))
+    polyline.attr('points', genPoints(numPoints))
+        // polyline.fill('#f06')
+        // polyline.stroke({ color: '#f06', width: 10, linecap: 'round', linejoin: 'round' })
 
+    function genPoints(numPoints) {
 
+        var points = startPoints
+        var x = 0;
+        var y = 450;
 
-// draw and animate graph
+        for (var i = 0; i <= numPoints; i++) {
 
-var speed = 1;
+            y = newHeight(y);
+            x = i * viewBoxWidth / numPoints;
 
-var viewBoxHeight = 900;
-var viewBoxWidth = 1920;
+            points += `${x} ${y} `
 
-var numPoints = 30;
-var maxPoints = 50;
-
-var startPoints = viewBoxWidth + " 0 0 0 "
-// var startPoints = ""
-
-var draw = SVG(document.getElementById('myClip'))
-var polyline = draw.polyline(genPoints(numPoints))
-polyline.fill('#f06')
-// polyline.stroke({ color: '#f06', width: 10, linecap: 'round', linejoin: 'round' })
-
-function genPoints(numPoints){
-
-  var points = startPoints
-  var x = 0;
-  var y = 450;
-
-  for(var i = 0; i <= numPoints; i++){
-
-    y = newHeight(y);
-    x = i * viewBoxWidth / numPoints;
-
-    points += `${x} ${y} `
-
-  }
-  return points.substring(0, points.length - 1);
-}
-
-function newHeight(lastHeight){
-  var change = Math.round((Math.random() - 0.5)*viewBoxHeight / 4);
-  if(lastHeight + change <= viewBoxHeight && lastHeight + change >= 0 ){
-    return lastHeight + change;
-  } else {
-    return lastHeight - change;
-  }
-}
-
-function extendLine(callback){
-
-  var points = polyline.attr('points')
-  
-  addPoint(points, viewBoxWidth + viewBoxWidth / (getNumPoints(points)), newHeight(getLastHeight(points)))
-  
-  polyline.animate(1000 / speed, 0, 'now' ).ease('<>').attr({'points': startPoints + stretchPoints(polyline.attr('points').slice(11), getNumPoints(points) - 2)})
-  .after(function(){
-    if(getNumPoints(points) - 2 >= maxPoints){
-      reducePoints().then(extendLine)
-    } else{
-      extendLine()
+        }
+        return points.substring(0, points.length - 1);
     }
-  })
 
-}
+    function newHeight(lastHeight) {
+        var change = round(Math.round((Math.random() - 0.5) * viewBoxHeight / 4));
+        if (lastHeight + change <= viewBoxHeight && lastHeight + change >= 0) {
+            return lastHeight + change;
+        } else {
+            return lastHeight - change;
+        }
+    }
 
-function getNumPoints(points){
-  points = points.split(' ')
-  return points.length  / 2;
-}
+    function extendLine(callback) {
 
-function stretchPoints(points, newNumPoints){
-  points = points.split(' ')
+        var points = polyline.attr('points')
 
-  for(var i = 0; i < points.length; i += 2){
-    points[points.length - i - 2] = (newNumPoints - i / 2) * viewBoxWidth / (newNumPoints - 1);
-  }
+        addPoint(points, viewBoxWidth + viewBoxWidth / (getNumPoints(points)), newHeight(getLastHeight(points)))
 
-  points = points.join(' ')
 
-  return points;
-}
+        polyline.animate(1000 / speed, 0, 'now').ease('<>').attr({
+                'points': startPoints + stretchPoints(polyline.attr('points').slice(11), getNumPoints(points) - 2)
+            })
+            .after(function() {
+                if (getNumPoints(points) - 2 >= maxPoints) {
+                    reducePoints().then(extendLine)
+                } else {
+                    extendLine()
+                }
+            })
 
-function reducePoints(){
-  return new Promise(resolve => {
-    polyline.animate(1000 / speed, 0, 'now').ease('>').attr({'points': startPoints + stretchPoints(polyline.attr('points').slice(11), numPoints - 1)}).after(function(){
-      var points = polyline.attr('points').slice(11).split(' ')
-      points = points.slice(points.indexOf("0"))
-      polyline.attr('points', startPoints + points.join(' '))
+    }
 
-      resolve()
-    })
-  });
-}
+    function getNumPoints(points) {
+        return points.split(' ').length / 2;
+    }
 
-function getLastHeight(points){
-  points = points.split(' ')
+    function stretchPoints(points, newNumPoints) {
+        points = points.split(' ')
 
-  return parseInt(points[points.length - 1])
-}
+        for (var i = 0; i < points.length; i += 2) {
+            points[points.length - i - 2] = round((newNumPoints - i / 2) * viewBoxWidth / (newNumPoints - 1));
+        }
 
-function addPoint(points, x,y){
-  polyline.attr('points', points + ` ${x} ${y}`);
-}
+        points = points.join(' ')
 
-$( document ).ready(function() {
-  extendLine()
-});
+        return points;
+    }
 
+    function reducePoints() {
+        return new Promise(resolve => {
+            polyline.animate(1000 / speed, 0, 'now').ease('>').attr({
+                'points': startPoints + stretchPoints(polyline.attr('points').slice(11), numPoints - 1)
+            }).after(function() {
+                var points = polyline.attr('points').slice(11).split(' ')
+                points = points.slice(points.indexOf("0"))
+                polyline.attr('points', startPoints + points.join(' '))
+
+                resolve()
+            })
+        });
+    }
+
+    function getLastHeight(points) {
+        points = points.split(' ')
+
+        return parseInt(points[points.length - 1])
+    }
+
+    function addPoint(points, x, y) {
+        polyline.attr('points', points + ` ${x} ${y}`);
+    }
+
+    function round(number) {
+        return Number((number).toFixed(precision))
+    }
+
+    $(document).ready(function() {
+        extendLine()
+    });
 </script>
