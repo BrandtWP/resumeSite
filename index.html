@@ -9,10 +9,18 @@
     <link rel="stylesheet" type="text/css" href="resources/asciinema-player.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link href="./blogPosts/covarianceTesting.html" rel="import" />
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </head>
 
 <body>
+    <script>
+        AOS.init();
+    </script>
 
     <div id="splashscreen">
         <svg id="backgroundSVG" viewbox="0 0 1920 900">
@@ -26,124 +34,199 @@
                 <use xlink:href="#name" fill="#000"></use>
             </mask>
             <mask id="mask">
-                <rect width="1920" height="900" fill="#fff" />
+                <rect width="100%" height="100%" fill="#fff" />
                 <use xlink:href="#graph" fill="#000"></use>
             </mask>
             <use xlink:href="#graph" fill="#fff" mask="url(#knockout-text)"></use>
             <use xlink:href="#name" fill="#fff" mask="url(#mask)"></use>
+            <a href ="#aboutMe">
+                <text id="name" class="centerText" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="rgba(0,0,0,0)">BRANDT WINKLER PRINS</text>
+            </a>
         </svg>
-    </div>
+        <svg width="1920" height="80" viewBox="0 0 7128 297" version="1.1" id="svg5" inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)" sodipodi:docname="socials.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+            xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <mask id = "socialsMask">
+            <rect width="100%" height="100%" fill="#fff"/>
+            <g
+            id="g121"
+            transform="translate(-92.741584)">
+            <path
+            d="m 12,-8.5875955 c -11.66337056,0 -21.110173,9.45207999 -21.110173,21.1101735 0,9.328937 6.0480646,17.239974 14.4340808,20.028276 1.0555086,0.198788 1.4425285,-0.453869 1.4425285,-1.015047 0,-0.501367 -0.017592,-1.829549 -0.026388,-3.58873 C 0.86790212,29.220724 -0.37056136,25.114796 -0.37056136,25.114796 -1.3310742,22.67833 -2.7190681,22.027433 -2.7190681,22.027433 -4.6312979,20.718602 -2.5712969,20.74499 -2.5712969,20.74499 -0.45148369,20.892761 0.66207794,22.919338 0.66207794,22.919338 2.5444017,26.147435 5.6036176,25.215069 6.8104158,24.675 7.0004074,23.309876 7.5439943,22.379269 8.1473934,21.851515 3.4591759,21.32376 -1.4682904,19.508286 -1.4682904,11.419571 c 0,-2.3045272 0.81801925,-4.186851 2.17258868,-5.6645631 C 0.46680884,5.221976 -0.2456595,3.0757751 0.8890123,0.16784879 c 0,0 1.767977,-0.56645631 5.8052976,2.16379271 1.6888138,-0.4697013 3.4831781,-0.7019132 5.2775431,-0.7124683 1.794365,0.010555 3.58873,0.242767 5.277543,0.7124683 4.010933,-2.73024902 5.77891,-2.16379271 5.77891,-2.16379271 1.134672,2.90792631 0.422204,5.05412721 0.211102,5.58715911 1.345773,1.4777121 2.163793,3.3600359 2.163793,5.6645631 0,8.109825 -4.934503,9.895394 -9.631517,10.414352 0.738856,0.633305 1.424937,1.928062 1.424937,3.905382 0,2.825245 -0.02639,5.094588 -0.02639,5.780669 0,0.554142 0.369428,1.213835 1.451325,1.002733 C 27.067386,29.753756 33.110173,21.837441 33.110173,12.522578 33.110173,0.86448449 23.658093,-8.5875955 12,-8.5875955"
+            id="path5"
+            style="stroke-width:1.75918" fill="#000" transform="matrix(3.6065636,0,0,3.6065636,3284.3372,105.22171)"/>
+            <path
+            d="m 20.447,20.452 h -3.554 v -5.569 c 0,-1.328 -0.027,-3.037 -1.852,-3.037 -1.853,0 -2.136,1.445 -2.136,2.939 v 5.667 H 9.351 V 9 h 3.414 v 1.561 h 0.046 c 0.477,-0.9 1.637,-1.85 3.37,-1.85 3.601,0 4.267,2.37 4.267,5.455 v 6.286 z M 5.337,7.433 c -1.144,0 -2.063,-0.926 -2.063,-2.065 0,-1.138 0.92,-2.063 2.063,-2.063 1.14,0 2.064,0.925 2.064,2.063 0,1.139 -0.925,2.065 -2.064,2.065 z M 7.119,20.452 H 3.555 V 9 H 7.119 Z M 22.225,0 H 1.771 C 0.792,0 0,0.774 0,1.729 V 22.271 C 0,23.227 0.792,24 1.771,24 H 22.222 C 23.2,24 24,23.227 24,22.271 V 1.729 C 24,0.774 23.2,0 22.222,0 Z"
+            id="path9" transform="matrix(6.1874994,0,0,6.1874994,3913.5024,74.250012)"/>
+            <path
+            d="m 11.105335,131.05643 v 15 c 0,0.85 -0.65,1.5 -1.5000002,1.5 h -1.5 v -13.613 l -9.00000004,6.463 -8.99999996,-6.463 v 13.613 h -1.4999998 c -0.851,0 -1.5,-0.65 -1.5,-1.5 v -15 c 0,-0.425 0.162,-0.8 0.431,-1.068 0.269,-0.272 0.645,-0.432 1.069,-0.432 h 0.5 l 9.99999976,7.25 10.00000004,-7.25 h 0.5 c 0.4250002,0 0.8000002,0.162 1.0690002,0.432 0.27,0.268 0.431,0.643 0.431,1.068 z"
+            id="path13"  transform="matrix(8.2499994,0,0,8.2499994,3666.0077,-994.59047)"/>
+        </mask>
+        <rect width="100%" height="100%" fill="#fff" mask="url(#socialsMask)"/>
+       <g
+          inkscape:label="Layer 1"
+          inkscape:groupmode="layer"
+          id="layer1"
+          transform="translate(3459)" />
+          <g
+          id="g121"
+          transform="translate(-92.741584)">
+
+    <a
+          href="https://github.com/BrandtWP"
+          target="_blank"
+          id="a7"
+          transform="matrix(3.6065636,0,0,3.6065636,3284.3372,105.22171)">
+         <path
+            d="m 12,-8.5875955 c -11.66337056,0 -21.110173,9.45207999 -21.110173,21.1101735 0,9.328937 6.0480646,17.239974 14.4340808,20.028276 1.0555086,0.198788 1.4425285,-0.453869 1.4425285,-1.015047 0,-0.501367 -0.017592,-1.829549 -0.026388,-3.58873 C 0.86790212,29.220724 -0.37056136,25.114796 -0.37056136,25.114796 -1.3310742,22.67833 -2.7190681,22.027433 -2.7190681,22.027433 -4.6312979,20.718602 -2.5712969,20.74499 -2.5712969,20.74499 -0.45148369,20.892761 0.66207794,22.919338 0.66207794,22.919338 2.5444017,26.147435 5.6036176,25.215069 6.8104158,24.675 7.0004074,23.309876 7.5439943,22.379269 8.1473934,21.851515 3.4591759,21.32376 -1.4682904,19.508286 -1.4682904,11.419571 c 0,-2.3045272 0.81801925,-4.186851 2.17258868,-5.6645631 C 0.46680884,5.221976 -0.2456595,3.0757751 0.8890123,0.16784879 c 0,0 1.767977,-0.56645631 5.8052976,2.16379271 1.6888138,-0.4697013 3.4831781,-0.7019132 5.2775431,-0.7124683 1.794365,0.010555 3.58873,0.242767 5.277543,0.7124683 4.010933,-2.73024902 5.77891,-2.16379271 5.77891,-2.16379271 1.134672,2.90792631 0.422204,5.05412721 0.211102,5.58715911 1.345773,1.4777121 2.163793,3.3600359 2.163793,5.6645631 0,8.109825 -4.934503,9.895394 -9.631517,10.414352 0.738856,0.633305 1.424937,1.928062 1.424937,3.905382 0,2.825245 -0.02639,5.094588 -0.02639,5.780669 0,0.554142 0.369428,1.213835 1.451325,1.002733 C 27.067386,29.753756 33.110173,21.837441 33.110173,12.522578 33.110173,0.86448449 23.658093,-8.5875955 12,-8.5875955"
+            id="path5"
+            style="stroke-width:1.75918" fill="rgba(0,0,0,0)"/>
+       </a>
+    
+       <a
+          href="https://www.linkedin.com/in/brandt-winkler-prins"
+          target="_blank"
+          id="a11"
+          transform="matrix(6.1874994,0,0,6.1874994,3913.5024,74.250012)">
+         <path
+            d="m 20.447,20.452 h -3.554 v -5.569 c 0,-1.328 -0.027,-3.037 -1.852,-3.037 -1.853,0 -2.136,1.445 -2.136,2.939 v 5.667 H 9.351 V 9 h 3.414 v 1.561 h 0.046 c 0.477,-0.9 1.637,-1.85 3.37,-1.85 3.601,0 4.267,2.37 4.267,5.455 v 6.286 z M 5.337,7.433 c -1.144,0 -2.063,-0.926 -2.063,-2.065 0,-1.138 0.92,-2.063 2.063,-2.063 1.14,0 2.064,0.925 2.064,2.063 0,1.139 -0.925,2.065 -2.064,2.065 z M 7.119,20.452 H 3.555 V 9 H 7.119 Z M 22.225,0 H 1.771 C 0.792,0 0,0.774 0,1.729 V 22.271 C 0,23.227 0.792,24 1.771,24 H 22.222 C 23.2,24 24,23.227 24,22.271 V 1.729 C 24,0.774 23.2,0 22.222,0 Z"
+            id="path9" fill="rgba(0,0,0,0)"/>
+       </a>
+       <a
+          href="mailto:brandt@brandtwp.me"
+          target="_blank"
+          id="a15"
+          transform="matrix(8.2499994,0,0,8.2499994,3666.0077,-994.59047)">
+         <path
+            d="m 11.105335,131.05643 v 15 c 0,0.85 -0.65,1.5 -1.5000002,1.5 h -1.5 v -13.613 l -9.00000004,6.463 -8.99999996,-6.463 v 13.613 h -1.4999998 c -0.851,0 -1.5,-0.65 -1.5,-1.5 v -15 c 0,-0.425 0.162,-0.8 0.431,-1.068 0.269,-0.272 0.645,-0.432 1.069,-0.432 h 0.5 l 9.99999976,7.25 10.00000004,-7.25 h 0.5 c 0.4250002,0 0.8000002,0.162 1.0690002,0.432 0.27,0.268 0.431,0.643 0.431,1.068 z"
+            id="path13" fill="rgba(0,0,0,0)"/>
+       </a>
+     </svg>
 
 
-    <div id="socials">
-        <a href="https://github.com/BrandtWP" target="_blank">
-            <svg aria-labelledby="simpleicons-github-icon" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title id="simpleicons-github-icon">GitHub icon</title>
-                <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
-                </path>
-            </svg>
-        </a>
-        <a href="https://www.linkedin.com/in/brandt-winkler-prins-a4b998120" target="_blank">
-            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>LinkedIn icon</title>
-                <path
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-        </a>
-        <a href="mailto:brandt@brandtwp.me" target="_blank">
-            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <title>Gmail icon</title>
-                <path
-                    d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H21V7.387l-9 6.463-9-6.463V21H1.5C.649 21 0 20.35 0 19.5v-15c0-.425.162-.8.431-1.068C.7 3.16 1.076 3 1.5 3H2l10 7.25L22 3h.5c.425 0 .8.162 1.069.432.27.268.431.643.431 1.068z" />
-            </svg>
-        </a>
-        <a href="https://bwinklerprins.medium.com">
-            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.846 6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403h6.958l5.378 11.795 4.728-11.795h6.633v.403l-1.916 1.837c-.165.126-.247.333-.213.538v13.498c-.034.204.048.411.213.537l1.871 1.837v.403h-9.412v-.403l1.939-1.882c.19-.19.19-.246.19-.537v-10.91l-5.389 13.688h-.728l-6.275-13.688v9.174c-.052.385.076.774.347 1.052l2.521 3.058v.404h-7.148v-.404l2.521-3.058c.27-.279.39-.67.325-1.052v-10.608z"/></svg>
-        </a>
     </div>
+    </div>
+    <div class='content indented aos-init aos-animate' data-aos="fade-up" data-aos-delay="200">
+        <h1>Evaluating Covariance Matrix Estimators for Portfolio Optimization</h1>
+        <h2>A Case Against Innovation</h2>
 
-    <h1>About Me</h1>
-    <div class="center">
-        <div class="content shadow">
-            <img id="pfp" src="resources/pfp.jpeg">
-            <p>
-                I am a student at the University College London studying for a BSc in Statistcs, Economics, and Finance . I have a strong background in computer programming, specifically concerning data science. This derived from a passion for quantitative finance and
-                alternative data. I have experience in both front-end and back-end development, networking and working in development teams. <br>
-                <br> In addition to programming and finance I enjoy playing the piano and padding out the about me section so it fits nicely with my profile picture
-            </p>
-        </div>
-    </div>
-    <h1>Skills</h1>
-    <div class="content" style="background-color: rgba(0,0,0,0); padding:0;">
-        <div class='skill shadow'>
-            <h3>Data Science</h3>
-            <p>I have been using <span class="highlight">Python</span> (with <span class="highlight">Numpy</span> and
-                <span class="highlight">Pandas</span>) to analyze financial datasets for almost five years now. This has also led me to acquire an extensive knowledge of <span class="highlight">SQL</span> (specifically for <span class="highlight">MySQL</span>                and <span class="highlight">MS SQL Server</span>), and I have forayed into the graph DB Gremlin. Furthermore, I am using
-                <span class="highlight">R</span> regularly as part of my degree program.
-            </p>
-        </div>
-        <div class='skill shadow'>
-            <h3>Machine Learning / AI</h3>
-            <p>I have been experimenting with Reinforcement learning, Natural Language Processing, and Neural Networks for several years now. I mainly use Keras, Tensorflow, NLTK, Scikit-Learn, and Stanford's CoreNLP. </p>
-        </div>
-        <div class='skill shadow'>
-            <h3>The Web</h3>
-            <p>HTML, CSS, and Javascript was &mdash; as is often the case &mdash; my first introduction to programming. I later expanded on this knowledge with learning how to develop web apps using node.js. This also lead me to learn how to use MongoDB
-                for storing user data</p>
-        </div>
-        <div class='skill shadow'>
-            <h3>Systems Languages</h3>
-            <p>I primarily use Go and C++ for high-speed systems programming. Recently, however, I have been investigating OCaml. It has taken me a while to wrap my head around functional programming but it now serves me as a viable replacement for Go.</p>
-        </div>
-    </div>
-    <h1>Projects</h1>
-    <div class="center">
-        <div class="content shadow" style="width:80vw;">
-            <h3> <a href="https://github.com/quantitateTrading/dataCollection    ">
-                Data Collection
-            </a></h3>
+        <embed type="text/html" src="blogPosts/covarianceTesting.html" , width=100>
 
-            <p>I have been compiling a collection of scripts for financial data collection that I run daily as a cronjob. Currently it collects daily data from <a href="https://stooq.com">Stooq</a> and it downloads all price updates from the <a href="https://iextrading.com">IEX exchange.</a>                Futhermore I have begun adding alternative data sources. It currently also scrapes the twitter feeds of all members of the U.S. Congress for mentions of companies and assesses their sentiment. I am currently working on something similar
-                for Reuters articles.
-            </p>
-            <h3><a href="https://github.com/quantitateTrading/trader">
-                Backtesting
-            </a></h3>
-            <div class="asciinema">
-                <asciinema-player src="resources/demo.cast"></asciinema-player>
-                <script src="resources/asciinema-player.js"></script>
-            </div>
-            <p>This is the output of the backtesting algorithm I wrote to test stock trading algorithms. It uses a C++ backend while the algorithms themselves are written in python. This ensures both fast code execution and easy development. Below are some
-                example graphs produced by the backtesting software. The one to the left traded PG&E (PCG) on the basis of the sentiment of tweets sent by members of California state government. The right graph used a neural net to trade Take Two Interactive
-                (TTWO) on the basis of reviews scraped from metacritic. It is a textbook example of overfitting, but it was an interesting project nevertheless.</p>
-            <div>
-                <img src="./resources/graph1.png">
-                <img src="./resources/graph2.png">
-            </div>
-        </div>
-    </div>
 
-    <div id="" class="content" style="background-color: rgba(0,0,0,0); padding:0; width:100%;">
+        <h3>2022-02-05</h3>
+    </div>
+    <div class='break'>
         <div>
-            <h1>Work Experience</h1>
+            <div class='triangle bottom right' style='border-color: white'></div>
+            <div class='triangle bottom left' style='border-color: white'></div>
+        </div>
+        <div style="flex-grow:1"></div>
+        <div>
+            <div class='triangle top left' style='border-color: white;'></div>
+            <div class='triangle top right' style='border-color: white;'></div>
+        </div>
+    </div>
+    <!-- <div class='triangle top right' style='border-color: white'></div> -->
+    <div class='content indented aos-init aos-animate' data-aos="fade-up" data-aos-delay="200">
+        <h1>What I Did During High School</h1>
+        <h2>A Look at Some Unsuccessful Trading Strategies</h2>
+        <p>I entered high school with a determination to implement some quantitative trading algorithms. The concept of making money with nothing but a little math certainly appealed to me. I just had to be a little smarter and more insightful than your
+            average trader — something not too hard I figured. In any case, saying “I work on quantitative trading strategies” was a good opener at parties (perhaps it’s best I wasn’t invited to any).</p>
 
-            <div class="experience shadow">
-                <div class='indent'>
-                    <a href="https://4me.com"><img src="resources/4meLogo.svg"></a> 2018 Part-time QA Tester at 4me, Inc.<br> 2019-2020 Part-time developer at 4me, Inc.<br>
+        <p>The first step was finding some good data. I had pieced together a professional-looking website to join the start-up program of the financial data provider Intrinio. I then wrote a little script to scrape their APIs until their daily API call
+            cap was reached. Having never heard of a cronjob, I resorted to manually running the script every morning to get the data I need. This was, needless to say, something I most often absentmindedly forgot to do. </p>
+
+        <p>But of course, I wasn’t going to content myself with daily data or anything like that. So I scraped years of order book data from the IEX exchange and thus angered my father after our ISP complained that we’d exceed our monthly data cap. But with
+            that, I had plenty of data to sink my teeth in. All I needed was some software to put it to work. </p>
+
+        <p>I decided to write this backtesting software entirely by myself while being perfectly aware of all the wonderful existing software solutions that existed for it. To this day I am still toiling away at writing iterations of backtesting software
+            as I deludedly insist that my algorithms are too complex and my datasets too large for any mundane backtester.</p>
+
+        <p>My first attempt certainly had wild delusions of grandeur. I insisted on writing it in “the fastest language,” namely, c++. While I used the entirely wrong sort of database for my price data, and while I had never even heard of “multi-threading”
+            before, I figured my backtester would be the fastest purely because it was written in c++. I later went and bound all my c++ functions to python functions because who could be bothered to write an algorithm in c++.</p>
+
+        <div class='center'>
+            <a href='https://github.com/quantitatetrading/trader'>Repo Link</a>
+        </div>
+        <div class="asciinema">
+            <asciinema-player src="resources/demo.cast"></asciinema-player>
+            <script src="resources/asciinema-player.js"></script>
+        </div>
+
+        <p>The next step in my plan was crowdsourcing. I quite frankly wasn’t creative enough to come up with any interesting signals for trading so instead, I resolved to mooch off of the common man. I wanted to make all my software and data available for
+            people at my school so I fruitlessly spent a summer creating a web app that would automatically spin up an AWS server for people who made an account to which people could connect via an online IDE (I swear I thought of the idea before learning
+            about Quantopian). Oddly enough I succeeded in building this, but it came as no surprise at all that nobody used it. </p>
+
+        <p>After two years of toiling and coding, I still found myself no richer. So I took major action. I started the quantitative finance club. Herein I assembled 20 or so of the not-so-brightest-minds in my school and discussed trading theses. </p>
+
+        <p>Being high off of smoke inhalation from another California wildfire led to our first trading strategy: trading PG&E shares based on the sentiment of tweets from California state government officials. Below is a graph of PG&E stock price (yellow),
+            sentiment (green), and strategy return (blue). </p>
+
+        <div class='center'><img src="./resources/graph1.png"></div>
+
+        <p>Our next strategy attempted to trade shares of Take-Two Interactive based on the reviews of their games. I set up a system to scrape video game reviews off of Metacritic and then applied non-linear regression techniques to fit it to the price
+            movements of Take-Two stock. The result is some beautiful overfitting (blue is the return of the trading strategy, yellow is the return of the S&P 500 over the same period). Needless to say, this strategy failed miserably out of sample. </p>
+
+        <div class='center'><img src="./resources/graph2.png"></div>
+        <p>Now if you're curious what I did during middle school why not treat yourself to <a href="https://medium.com/@brandtwp/the-candy-cartel-a0daf862ab9d">this article</a>?</p>
+        <h3>2021-01-08</h3>
+    </div>
+    <div class='break'>
+        <div>
+            <div class='triangle bottom right' style='border-color: white'></div>
+            <div class='triangle bottom left' style='border-color: white'></div>
+        </div>
+        <div style="flex-grow:1"></div>
+        <div>
+            <div class='triangle top left' style='border-color: white;'></div>
+            <div class='triangle top right' style='border-color: white;'></div>
+        </div>
+    </div>
+    <div class='content aos-init aos-animate' data-aos="fade-up" data-aos-delay="200" id="aboutMe">
+        <h1>About Me</h1>
+        <div style="display:flex; align-items: center; flex-direction: column;">
+            <div class='indented'>
+                <p>I am a second-year undergraduate student at the University College of London studying Statistics Economics and Finance who created this website in a desperate move to get employers’ attention. And while I’m busy putting things out in the
+                    open, why not have a look at my résumé?</p>
+
+                <p>When I am not studying or working for my part-time data analyst function I work on implementing quantitative trading strategies. I currently operate relative value and trend following strategies.</p>
+
+                <p>In my function as a data scientist at Secfi, I have worked in Amsterdam, San Francisco, and London. My projects included helping redesign their database structure and beginning the initiative of constructing a data warehouse, analyzing
+                    prospectuses of portfolio companies, developing frameworks for evaluating private equities, and assessing their user conversion process. Some of my work was even published in <a href="https://techcrunch.com/2022/01/20/inside-secfis-2021-state-of-stock-options-equity-report/">Tech Crunch</a></p>
+
+            </div>
+        </div>
+        <div id="experience">
+            <div class='experienceCategory'>
+                <h2>Work Experience</h2>
+                <div class='experience'>
+                    <a href="https://secfi.com"><img src="resources/secfiLogo.png"></a>
+                    <p>
+                        2021 Data Science Intern<br> 2022 Part-time Data Analyst<br>
+                    </p>
+                </div>
+                <div class='experience'>
+                    <a href="https://4me.com"><img src="resources/4meLogo.svg"></a>
+                    <p>2018 Part-time QA Tester<br> 2019-2020 Part-time developer<br></p>
+                </div>
+            </div>
+            <div class='experienceCategory'>
+                <h2>Education</h2>
+                <div class="experience">
+                    <a href="https://ucl.ac.uk"><img src="resources/uclLogo.png"></a>
+                    <p>
+                        BSc Statistics, Economics, and Finance 2020-2023<br> University College London, United Kingdom
+                    </p>
+                </div>
+                <div class="experience">
+                    <a href="https://redwood.org"><img src="resources/redwoodLogo.gif"></a>
+                    <p>
+                        Graduated Redwood High School 2017-2020<br> GPA: 4.3<br>
+                    </p>
                 </div>
             </div>
         </div>
-        <div>
-            <h1>Education</h1>
-            <div class="experience shadow">
-                <div>
-                    <a href="https://ucl.ac.uk"><img src="resources/uclLogo.png"></a> BSc in Economics and Statistics, degree anticipated May 2023<br> University College London, United Kingdom</div>
-                <div>
-                    <a href="https://redwood.org"><img src="resources/redwoodLogo.gif"></a> Graduated Redwood High School 2017-2020<br> GPA: 4.3<br>
-                </div>
-            </div>
-        </div>
+    </div>
+
 </body>
 
 </html>
@@ -161,7 +244,7 @@
     var numPoints = 30;
     var maxPoints = 50;
 
-    var startPoints = `${viewBoxWidth} 0 0 0 `
+    var startPoints = `${viewBoxWidth} ${viewBoxHeight} 0 ${viewBoxHeight} `
         // var startPoints = ""
 
     var polyline = SVG(document.getElementById('graph'))
@@ -187,7 +270,7 @@
     }
 
     function newHeight(lastHeight) {
-        var change = round(Math.round((Math.random() - 0.5) * viewBoxHeight / 4));
+        var change = (Math.random() - 0.5) * viewBoxHeight / 4;
         if (lastHeight + change <= viewBoxHeight && lastHeight + change >= 0) {
             return lastHeight + change;
         } else {
@@ -196,20 +279,15 @@
     }
 
     function extendLine(callback) {
-
         var points = polyline.attr('points')
 
-        addPoint(points, viewBoxWidth + viewBoxWidth / (getNumPoints(points)), newHeight(getLastHeight(points)))
-
+        addPoint(points, viewBoxWidth + viewBoxWidth / (getNumPoints(points) - 3), newHeight(getLastHeight(points)))
 
         polyline.animate(1000 / speed, 0, 'now').ease('<>').attr({
-                'points': startPoints + stretchPoints(polyline.attr('points').slice(11), getNumPoints(points) - 2)
+                'points': stretchPoints(polyline.attr('points'), getNumPoints(points) - 2)
             })
             .after(function() {
-                console.log(polyline.attr('points').split(' ')[0])
-                if (polyline.attr('points').split(' ')[0] != 1920) {
-                    polyline.attr('points', genPoints(numPoints))
-                } else if (getNumPoints(points) - 2 >= maxPoints) {
+                if (getNumPoints(points) - 2 >= maxPoints) {
                     reducePoints().then(extendLine)
                 } else {
                     extendLine()
@@ -223,24 +301,27 @@
     }
 
     function stretchPoints(points, newNumPoints) {
-        points = points.split(' ')
+        points = points.split(' ').slice(4)
 
         for (var i = 0; i < points.length; i += 2) {
-            points[points.length - i - 2] = round((newNumPoints - i / 2) * viewBoxWidth / (newNumPoints - 1));
+            points[points.length - i - 2] = (newNumPoints - i / 2) * viewBoxWidth / (newNumPoints);
         }
 
         points = points.join(' ')
 
-        return points;
+        return startPoints + points;
     }
 
     function reducePoints() {
         return new Promise(resolve => {
+
+            points = polyline.attr('points')
+
             polyline.animate(1000 / speed, 0, 'now').ease('>').attr({
-                'points': startPoints + stretchPoints(polyline.attr('points').slice(11), numPoints - 1)
+                'points': stretchPoints(points, numPoints)
             }).after(function() {
-                var points = polyline.attr('points').slice(11).split(' ')
-                points = points.slice(points.indexOf("0"))
+                var points = polyline.attr('points').split(' ')
+                points = points.slice(points.length - numPoints * 2 - 2)
                 polyline.attr('points', startPoints + points.join(' '))
 
                 resolve()
@@ -256,10 +337,6 @@
 
     function addPoint(points, x, y) {
         polyline.attr('points', points + ` ${x} ${y}`);
-    }
-
-    function round(number) {
-        return Number((number).toFixed(precision))
     }
 
     $(document).ready(function() {

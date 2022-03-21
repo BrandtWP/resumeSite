@@ -5,18 +5,44 @@ html {
 }
 
 * {
-    font-family: Open Sans;
+    font-family: Serif;
+}
+
+h1 {
+    color: rgb(82, 82, 82);
+    font-family: Libre Baskerville;
+    font-weight: 300;
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    letter-spacing: 3px;
+}
+
+h2 {
+    color: rgb(82, 82, 82);
+    font-family: Libre Baskerville;
+    font-style: italic;
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    font-weight: 200;
 }
 
 body {
     all: initial;
     all: unset;
-    background-image: linear-gradient(275deg, #5E35B1, #006064) !important;
     position: relative;
+    overflow-x: hidden;
+}
+
+.divider {
+    margin: 20vh 47.5vw 20vh 47.5vw;
+    width: 5vw;
+    /* border: 1px solid #3959b3; */
 }
 
 ::-webkit-scrollbar {
-    display: none;
+    /* display: none; */
 }
 
 @media (max-width: 480px) {
@@ -49,37 +75,27 @@ body {
     }
 }
 
-h1 {
-    text-align: center;
-    color: white;
-    font-family: Open Sans;
-    font-weight: 900;
-    line-height: 60px;
-    font-size: 2.5rem;
-    width: 100%;
-}
-
 h3 {
-    color: #345a80;
-    padding: 5px 0px;
+    color: rgb(82, 82, 82);
     margin: 0;
-    font-size: 1.75rem;
-    font-weight: 900;
+    font-size: 1.25rem;
+    font-family: Libre Baskerville;
+    font-weight: 200;
     width: 100%;
     text-align: center;
 }
 
 p {
-    font-size: 1rem;
+    /* color: rgb(82, 82, 82); */
+    font-size: 1.15rem;
     font-family: Open Sans;
-    max-width: 60vw;
+    line-height: 1.75rem;
+    margin: 4rem 0 4rem 0;
+    width: 100%;
 }
 
-a {
-    color: unset;
-    text-decoration: unset;
-    color: #345a80;
-    font-weight: bold;
+.indented p::before {
+    content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0"
 }
 
 .centerText {
@@ -89,6 +105,7 @@ a {
 
 #backgroundSVG {
     margin: 0;
+    padding: 0;
 }
 
 #splashscreen {
@@ -97,6 +114,9 @@ a {
     vertical-align: center;
     align-items: center;
     justify-content: center;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(275deg, #3959b3, #003864) !important;
 }
 
 polyline {
@@ -125,16 +145,24 @@ polyline {
 }
 
 .content {
-    position: relative;
-    background-color: white;
-    padding: 30px 30px;
-    border-radius: 10px;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    width: 60vw;
+    margin-left: 20%;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* flex-grow: 3; */
+    height: auto;
+    /* overflow-x: hidden; */
+    /* overflow: auto; */
+    /* margin: 5vh 20vw 5vh 20vw; */
+}
+
+embed {
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: space-evenly;
-    width: fit-content;
-    margin-bottom: 50px;
+    width: 100%;
+    /* flex-grow: 2; */
+    height: 14500px !important;
 }
 
 .skill {
@@ -149,25 +177,6 @@ polyline {
 
 .shadow {
     box-shadow: 0 0 5px #aaa;
-}
-
-.experience {
-    /* width: 400px; */
-    /* height: 200px; */
-    background-color: white;
-    border-radius: 5px;
-    padding: 25px;
-}
-
-.experience img {
-    width: 100px;
-    margin: 25px 25px 25px 0px;
-}
-
-.experience div {
-    vertical-align: middle;
-    display: flex;
-    align-items: center;
 }
 
 .asciinema {
@@ -191,4 +200,90 @@ polyline {
     height: 200px !important;
     border-radius: 5px;
     margin-right: 50px;
+}
+
+.break {
+    width: 100vw;
+    height: 50vh;
+    background-image: linear-gradient(275deg, #3959b3, #003864) !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.break div {
+    display: flex;
+    flex-direction: row;
+}
+
+.triangle {
+    background-color: transparent !important;
+}
+
+.triangle.top {
+    border-bottom: 8vh solid;
+}
+
+.triangle.bottom {
+    border-top: 8vh solid;
+}
+
+.triangle.right {
+    border-left: 50vw solid transparent !important
+}
+
+.triangle.left {
+    border-right: 50vw solid transparent !important
+}
+
+#aboutMe img {
+    width: 100px;
+    margin: 25px;
+    filter: grayscale(100)
+}
+
+#experience {
+    display: flex;
+    align-items: center;
+}
+
+.experienceCategory {
+    width: 50%;
+}
+
+.experience {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+@media (min-width: 1200px) {
+    #experience {
+        flex-direction: row;
+    }
+    .experience {
+        height: 150px;
+    }
+}
+
+@media (max-width: 1199px) {
+    #experience {
+        flex-direction: column;
+    }
+    .experience {
+        height: auto;
+    }
+}
+
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    color: #003864;
+    font-family: Open Sans;
+    text-decoration: unset;
+    margin: 20px 0 20px 0;
+    font-weight: bold;
 }
