@@ -14,6 +14,18 @@
     <link href="./blogPosts/covarianceTesting.html" rel="import" />
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ]
+            }
+        };
+    </script>
 
 </head>
 
@@ -43,7 +55,7 @@
                 <text id="name" class="centerText" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="rgba(0,0,0,0)">BRANDT WINKLER PRINS</text>
             </a>
         </svg>
-        <svg width="1920" height="80" viewBox="0 0 7128 297" version="1.1" id="svg5" inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)" sodipodi:docname="socials.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        <svg width="1920" height="80" style='max-width:100vw;' viewBox="0 0 7128 297" version="1.1" id="svg5" inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)" sodipodi:docname="socials.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
             xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
         <mask id = "socialsMask">
             <rect width="100%" height="100%" fill="#fff"/>
@@ -106,6 +118,48 @@
     </div>
     </div>
     <div class='content indented aos-init aos-animate' data-aos="fade-up" data-aos-delay="200">
+        <h1>Building a Trend Following Trading System</h1>
+        <h2>Using a DCC-GARCH Model</h2>
+        <p>
+            $\DeclareMathOperator{\EMA}{EMA} \DeclareMathOperator{\EMAC}{EMAC} \DeclareMathOperator{\Var}{Var} \DeclareMathOperator{\Cov}{Cov} \DeclareMathOperator{\Vec}{vec} $ Now, let's try and integrate our GARCH model into a more complete systmatic trading system.
+            We compute expected returns by using a simple trend following algorithm put forth by Robert Carver [1]. Given a vector of prices of length $T$ and a scalar $\alpha$ defining a decay rate the exponential moving average at time $T$ is given
+            by $$\EMA_T(\alpha, p) = \alpha \cdot \sum^T_{t=1}{(1-\alpha)^{t-1}p_t}$$ We like to think of the decay rate $\alpha$ in terms of "span" which is a time period specified in days. Given a span $s$ we compute $\alpha$ as $\alpha = \frac{2}{s+1}$
+            Carver's trend following signal is based on comparing the exponential moving averages of different spans, we call this the Exponential Moving Average Crossover signal. Let $p_\text{diff}$ be the vector of length $T-1$ defined as $p_{\text{diff},t}
+            = p_t - p_{t-1}, t = 2, \ldots, T$ $$\EMAC_T(p, s_\text{short}, s_\text{long}) = \frac{\EMA_T(p, \frac{2}{s_\text{short} + 1}) - \EMA_T(p, \frac{2}{s_\text{long} + 1})}{\sqrt{\Var(p_\text{diff})}}$$ $$s_\text{short}
+            < s_\text{long}$$ The denominator in the above formula for the crossover signal is just the sample standard deviation of the absolute price changes. Carver suggests interpreting a positive value of EMAC as a sign of an upwards price trend and a negative
+                EMAC as a sign of a downwards price trend. Carver suggests summing $\EMAC$s with the following pairs of spans: 2:8, 4:16, 8:32, 16:64, 32: 128 and 64:256. We can express this Multiple-Exponential-Moving-Average-Crossover signal this as follows:
+                $$\text{MEMAC}=\ sum^6_{n=1}{\EMAC(2^n, 2^{n+2})}$$ In order to effectively use this signal in our portfolio selection we must adapt the dimensionsless scalar that $\text{MEMAC}$ produces into an expected return. Using the system put forth
+                by Grinold [2] we can convert carver 's signal into an expected return as follows:
+
+Given a vector of signals $s$ and a vector of subsequent excess returns $r$, all of length $T$, we have
+
+$$\text{IC} = \frac{\Cov(r, s)}{\Var(r)\cdot \Var(s)}$$
+
+$$ \alpha = \Var(r) \cdot \text{IC} \cdot \frac{s_T - \bar{s}_T}{\sqrt{\Var{(s)}}}$$
+
+Where alpha is the predicted excess return and $\frac{s_T - \bar{s}_T}{\sqrt{\Var{(s)}}}$ is just the z-score of $s$. $\text{IC}$ is known as the Information Coefficient and is the correlation between a signal and excess return. We can calculate the $IC$ on multiple securities if we expect the model to work equally well on them. Given that we have no reason to doubt this, given a matrix $R$ of excess returns and a matrix $S$ of signals with $T$ observations and $n$ assets $S$ of signals then $$\text{IC} = \frac{\Cov(\Vec(R), \Vec(S))}{\Var(\Vec(R)) \cdot \Var(\Vec(S))}$$
+
+Where $\Vec$ is the matrix vectorization operator which produces a column vector out of a given matrix by stacking its columns. 
+
+After some emprical testing I have, however, resolved to modify Carver's algorithm somewhat. Carver observes that the expected mean of an $\EMAC$ varies signficantly depending on the choice of spans. He fixes this by normalizing the $\EMAC$s using their
+                sample mean. I have achieved better results and a higher $\text{IC}$ by means of modifying the $\EMAC$ to be $$\EMAC_T(p, s_\text{short}, s_\text{long})=\frac{\EMA_T(r, \frac{2}{s_\text{short} + 1}) - \EMA_T(r, \frac{2}{s_\text{long} + 1})}{\sqrt{\Var(r)}}$$
+                $$r=\frac{p}{\nabla{p}}$$ Where $\nabla$ is the backshift operator, thus $r$ is simply a vector log returns. When implementing this I found this signal to consistently have a slightly negative IC. Thus in theory one would make more money by
+                doing exactly the *opposite* of what the signal suggests. While I could invert the signal, I would have no rationale for doing so and the IC would still be so incredibly low that it would likely make no money when actually trading. Instead
+                I opt to combine it with the GARCH model shown previously. We found that increased correlation coefficients as measured by the GARCH model alined with market downturns. Thus it might be reasonable to assume trends to be more predictive if
+                the correlation is higher. A bit of a stretch I know, but it has some intuitive appeal. <img src='resources/correlations.png'>
+
+                We compute a weighting coefficient for each of the $\EMAC$s as follows: given a vector of mean correlations $\rho$ then we weight each trend with $$w_{T,s}=\ frac{\rho_{T}}{\rho_{T - s}}$$ $$\text{MEMAC}_T=\frac{\sum^6_{n=1}{w_{T, 2^{n+2}} \cdot \EMAC_T(2^n,
+                2^{n+2})}}{\sum^6_{n=1}{w_{T, 2^{n+2}}}}$$ We divide by the sum of the weights so as not to change the signal mean. We now run a backtest with a reblancing period of 20 days and optimize our portfolio using the Markowitz method. At each
+                time interval we fit a DCC-GARCH model with all prices up to that date and use it to predict future correlation and covariance. The results are rather disappointing with a tiny information ration of 0.07 and a visibly extremely high beta.
+
+                <img src='resources/momentumPerformance.png'> But I am eager to see what will happen once I expand the number of possible assets and enable short selling in my backtester! To be continued thus!
+                <br>
+                <br>
+                <br> [1]:Carver, Robert. Systematic Trading: A Unique New Method for Designing Trading and Investing Systems. Harriman House, 2015.
+                <br> [2]: Grinold, Richard C. Active Portfolio Management: A Quantitative Approach for Providing Superior Returns and Controlling Risk. McGraw-Hill, 2011. <a href="http://cslt.riit.tsinghua.edu.cn/mediawiki/images/a/a7/Active_Portfolio_Management_-_A_quantitative_approach_for_providing_superior_treturn_and_controlling_risk.pdf">link</a>
+        </p>
+    </div>
+    <div class='content indented aos-init aos-animate' data-aos="fade-up" data-aos-delay="200">
         <h1>Evaluating Covariance Matrix Estimators for Portfolio Optimization</h1>
         <h2>A Case Against Innovation</h2>
 
@@ -156,7 +210,8 @@
             people at my school so I fruitlessly spent a summer creating a web app that would automatically spin up an AWS server for people who made an account to which people could connect via an online IDE (I swear I thought of the idea before learning
             about Quantopian). Oddly enough I succeeded in building this, but it came as no surprise at all that nobody used it. </p>
 
-        <p>After two years of toiling and coding, I still found myself no richer. So I took major action. I started the quantitative finance club. Herein I assembled 20 or so of the not-so-brightest-minds in my school and discussed trading theses. </p>
+        <p>After two years of toiling and coding, I still found myself no richer. So I took major action. I started the quantitative finance club. Herein I assembled 20 or so of the not-so-brightest-minds in my school and discussed trading theses.
+        </p>
 
         <p>Being high off of smoke inhalation from another California wildfire led to our first trading strategy: trading PG&E shares based on the sentiment of tweets from California state government officials. Below is a graph of PG&E stock price (yellow),
             sentiment (green), and strategy return (blue). </p>
