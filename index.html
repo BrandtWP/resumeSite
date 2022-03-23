@@ -128,7 +128,7 @@
             = p_t - p_{t-1}, t = 2, \ldots, T$ $$\EMAC_T(p, s_\text{short}, s_\text{long}) = \frac{\EMA_T(p, \frac{2}{s_\text{short} + 1}) - \EMA_T(p, \frac{2}{s_\text{long} + 1})}{\sqrt{\Var(p_\text{diff})}}$$ $$s_\text{short}
             < s_\text{long}$$ The denominator in the above formula for the crossover signal is just the sample standard deviation of the absolute price changes. Carver suggests interpreting a positive value of EMAC as a sign of an upwards price trend and a negative
                 EMAC as a sign of a downwards price trend. Carver suggests summing $\EMAC$s with the following pairs of spans: 2:8, 4:16, 8:32, 16:64, 32: 128 and 64:256. We can express this Multiple-Exponential-Moving-Average-Crossover signal this as follows:
-                $$\text{MEMAC}=\ sum^6_{n=1}{\EMAC(2^n, 2^{n+2})}$$ In order to effectively use this signal in our portfolio selection we must adapt the dimensionsless scalar that $\text{MEMAC}$ produces into an expected return. Using the system put forth
+                $$\text{MEMAC}=\sum^6_{n=1}{\EMAC(2^n, 2^{n+2})}$$ In order to effectively use this signal in our portfolio selection we must adapt the dimensionsless scalar that $\text{MEMAC}$ produces into an expected return. Using the system put forth
                 by Grinold [2] we can convert carver 's signal into an expected return as follows:
 
 Given a vector of signals $s$ and a vector of subsequent excess returns $r$, all of length $T$, we have
